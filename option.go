@@ -34,6 +34,7 @@ func Some[T any](val T) Option[T] {
 	}
 }
 
+// None returns an empty option
 func None[T any]() Option[T] {
 	return &optionImpl[T]{
 		isNone: true,
