@@ -1,4 +1,4 @@
-package option
+package easy_errors
 
 import "errors"
 
@@ -40,7 +40,7 @@ func None[T any]() Option[T] {
 	}
 }
 
-func Map[A, B any](opA Option[A], f func(A) B) Option[B] {
+func MapOption[A, B any](opA Option[A], f func(A) B) Option[B] {
 	if opA.IsNone() {
 		return None[B]()
 	}
@@ -48,7 +48,7 @@ func Map[A, B any](opA Option[A], f func(A) B) Option[B] {
 	return Some(v)
 }
 
-func MapErr[A, B any](opA Option[A], f func(A) (B, error)) Option[B] {
+func MapErrOption[A, B any](opA Option[A], f func(A) (B, error)) Option[B] {
 	if opA.IsNone() {
 		return None[B]()
 	}
@@ -59,7 +59,7 @@ func MapErr[A, B any](opA Option[A], f func(A) (B, error)) Option[B] {
 	return Some(v)
 }
 
-func Bind[A, B any](opA Option[A], f func(A) Option[B]) Option[B] {
+func BindOption[A, B any](opA Option[A], f func(A) Option[B]) Option[B] {
 	if opA.IsNone() {
 		return None[B]()
 	}
