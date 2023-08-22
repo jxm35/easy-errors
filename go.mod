@@ -1,3 +1,3 @@
-module github.com/jxm35/go-results
+module github.com/jxm35/go-resultsb
 
 go 1.19
