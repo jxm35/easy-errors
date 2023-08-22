@@ -1,4 +1,4 @@
-package easy_errors
+package results
 
 type Result[T any] interface {
 	GetError() error
