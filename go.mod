@@ -1,3 +1,3 @@
-module github.com/jxm35/easy-errors
+module github.com/jxm35/go-results
 
 go 1.19
