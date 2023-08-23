@@ -1,4 +1,4 @@
-package option
+package results
 
 type Option[T any] interface {
 	IsNone() bool
